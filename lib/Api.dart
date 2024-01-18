@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:ios/jason.dart';
 import 'dart:convert';
 
+import 'package:ios/show_data.dart';
+
 class apis extends StatefulWidget {
   const apis({super.key});
 
@@ -49,6 +51,19 @@ class _apisState extends State<apis> {
           return Card(
             color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
             child: ListTile(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Show_data(
+                        albumId: _listdata[index].albumId,
+                        id: _listdata[index].id,
+                        thumbnailUrl: _listdata[index].thumbnailUrl,
+                        title: _listdata[index].title,
+                        url: _listdata[index].url,
+                      ),
+                    ));
+              },
               contentPadding: const EdgeInsets.all(5),
               title: Text(_listdata[index].title.toString()),
               subtitle: Text(_listdata[index].albumId.toString()),
