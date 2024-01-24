@@ -35,7 +35,6 @@ class _apisState extends State<apis> {
     }
   }
 
-  bool islode = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
